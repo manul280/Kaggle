@@ -1,0 +1,1535 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "63be41b8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011733,
+     "end_time": "2024-04-23T19:51:58.505373",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:58.493640",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**This notebook is an exercise in the [Intro to Programming](https://www.kaggle.com/learn/intro-to-programming) course.  You can reference the tutorial at [this link](https://www.kaggle.com/alexisbcook/arithmetic-and-variables).**\n",
+    "\n",
+    "---\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "77a8ac6d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011121,
+     "end_time": "2024-04-23T19:51:58.535482",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:58.524361",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**このノートは[プログラミング入門](https://www.kaggle.com/learn/intro-to-programming)コースの練習問題です。\n",
+    "[このリンク](https://www.kaggle.com/alexisbcook/arithmetic-and-variables)のチュートリアルを参照してください。**\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "116305a2",
+   "metadata": {
+    "_kg_hide-input": true,
+    "_kg_hide-output": true,
+    "papermill": {
+     "duration": 0.01202,
+     "end_time": "2024-04-23T19:51:58.560186",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:58.548166",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "This exercise will get you started with running your own code.  \n",
+    "\n",
+    "# Set up the notebook\n",
+    "\n",
+    "To begin, run the code in the next cell.\n",
+    "- Begin by clicking inside the code cell.  \n",
+    "- Click on the triangle (in the shape of a \"Play button\") that appears to the left of the code cell.\n",
+    "- If your code was run sucessfully, you will see `Setup Complete` as output below the cell.\n",
+    "\n",
+    "Instead of clicking on the triangle, you can also run code by pressing Shift + Enter on your keyboard.  Try this now!  Nothing bad will happen if you run the code more than once.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ce888723",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011036,
+     "end_time": "2024-04-23T19:51:58.582569",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:58.571533",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "この練習は、あなた自身のコードを実行することから始める。 \n",
+    "\n",
+    "# ノートブックのセットアップ\n",
+    "\n",
+    "始めるには、次のセルのコードを実行してください。\n",
+    "- コードのセル内をクリックして始めます。 \n",
+    "- コードセルの左側に表示される三角形（「再生ボタン」の形）をクリックしてください。\n",
+    "- コードがうまく実行されると、セルの下に`Setup Complete`と出力されます。\n",
+    "\n",
+    "三角形をクリックする代わりに、キーボードのShift + Enterキーを押してコードを実行することもできます。 今すぐ試してみてください！ コードを複数回実行しても悪いことは起こりません。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "2a1b4dff",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:51:58.607660Z",
+     "iopub.status.busy": "2024-04-23T19:51:58.606853Z",
+     "iopub.status.idle": "2024-04-23T19:51:59.852167Z",
+     "shell.execute_reply": "2024-04-23T19:51:59.850314Z"
+    },
+    "papermill": {
+     "duration": 1.261327,
+     "end_time": "2024-04-23T19:51:59.855296",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:58.593969",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Setup complete.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 練習の設定\n",
+    "from learntools.core import binder\n",
+    "binder.bind(globals())\n",
+    "from learntools.intro_to_programming.ex1 import *\n",
+    "print('Setup complete.')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8997ffcf",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012646,
+     "end_time": "2024-04-23T19:51:59.879279",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:59.866633",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "The code above sets up the notebook so that it can check your answers in this exercise.  You should never modify this code.  (Otherwise, the notebook won't be able to verify that you have successfully completed the exercise.)\n",
+    "\n",
+    "After finishing all of the questions below, you'll see the exercise marked as complete on the [course page](http://www.kaggle.com/learn/intro-to-programming).  Once you complete all of the lessons, you'll get a course completion certificate!\n",
+    "\n",
+    "# Question 1\n",
+    "\n",
+    "Next, you will run some code from the tutorial, so you can see how it works for yourself.  Run the next code cell without changes.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d2bb1f0f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011117,
+     "end_time": "2024-04-23T19:51:59.904121",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:59.893004",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "上のコードは、この練習問題であなたの答えをチェックできるようにノートブックをセットアップするものです。 このコードは決して変更してはいけません。 (そうしないと、ノートブックはあなたが練習問題を正常に完了したことを確認できません)。\n",
+    "\n",
+    "以下の問題をすべて解き終わると、[コースページ](http://www.kaggle.com/learn/intro-to-programming) に演習完了のマークが表示されます。 すべてのレッスンを完了すると、コース完了証明書が発行されます！\n",
+    "\n",
+    "# 問題1\n",
+    "\n",
+    "次に、チュートリアルのコードを実行します。 次のコードセルを変更せずに実行してください。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "2b9b8ac2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:51:59.929873Z",
+     "iopub.status.busy": "2024-04-23T19:51:59.928988Z",
+     "iopub.status.idle": "2024-04-23T19:51:59.944393Z",
+     "shell.execute_reply": "2024-04-23T19:51:59.942174Z"
+    },
+    "papermill": {
+     "duration": 0.031781,
+     "end_time": "2024-04-23T19:51:59.947305",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:59.915524",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello, world!\n"
+     ]
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.2, \"interactionType\": 1, \"questionType\": 2, \"questionId\": \"1_RunHelloWorld\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">If you see 'Hello, world!' above, You have successfully printed a message, and you're ready to move on to the next question.</span>"
+      ],
+      "text/plain": [
+       "If you see 'Hello, world!' above, You have successfully printed a message, and you're ready to move on to the next question."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "print(\"Hello, world!\")\n",
+    "\n",
+    "# 削除しないでください：この質問を完了としてマークしてください。\n",
+    "q1.check()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a85b60c0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011554,
+     "end_time": "2024-04-23T19:51:59.971925",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:59.960371",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "上記の'Hello, world!'が表示されていれば、メッセージのプリントは成功です。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a44e42a7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011274,
+     "end_time": "2024-04-23T19:51:59.995054",
+     "exception": false,
+     "start_time": "2024-04-23T19:51:59.983780",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "You just ran code to print `Hello world!`, which you should see in the output above.\n",
+    "\n",
+    "The second line of code (`q1.check()`) checks your answer.  You should never modify this checking code; if you remove it, you won't get credit for completing the problem.\n",
+    "\n",
+    "# Question 2\n",
+    "\n",
+    "Now, you will print another message of your choosing.  To do this, change `print(\"Your message here!\")` to use a different message.  For instance, you might like to change it to something like:\n",
+    "- `print(\"Good morning!\")`\n",
+    "- `print(\"I am learning how to code :D\")`\n",
+    "\n",
+    "Or, you might like to see what happens if you write something like `print(\"3+4\")`.  Does it return 7, or does it just think of `\"3+4\"` as just another message?\n",
+    "\n",
+    "Make sure that your message is enclosed in quotation marks (`\"`), and the message itself does not use quotation marks. For instance, this will throw an error: `print(\"She said \"great job\" and gave me a high-five!\")` because the message contains quotation marks.  If you decide to take the Python course after completing this course, you will learn more about how to avoid this error in [Lesson 6](https://www.kaggle.com/colinmorris/strings-and-dictionaries).\n",
+    "\n",
+    "Feel free to try out multiple messages!\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4b9418d1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.01141,
+     "end_time": "2024-04-23T19:52:00.018226",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.006816",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "あなたは今、`Hello world!` を表示するコードを実行した。\n",
+    "\n",
+    "2行目のコード（`q1.check()`）はあなたの答えをチェックします。 このチェックコードは決して変更してはいけません。もし削除してしまうと、問題を完了しても単位はもらえません。\n",
+    "\n",
+    "# 質問2\n",
+    "\n",
+    "ここで、あなたが選んだ別のメッセージを表示します。 これを行うには、`print(\"Your message here!\")` を別のメッセージに変更してください。 例えば、次のようなメッセージに変更します：\n",
+    "- print(\"おはようございます!\")\n",
+    "- print(\"私はコードを勉強しています :D\")` のように。\n",
+    "\n",
+    "あるいは、`print(\"3+4\")`のように書いたらどうなるか見てみたいかもしれない。 print(\"3+4\")`は7を返すのでしょうか？それとも`\"3+4\"`をただのメッセージとみなすのでしょうか？\n",
+    "\n",
+    "メッセージが引用符(`\"`)で囲まれていて、メッセージ自体が引用符を使っていないことを確認してください。例えば、`print(\"She said \"great job\" and gave me a high-five!\")`とすると、メッセージに引用符が含まれているのでエラーになります。 このコースを修了した後、Pythonコースを受講することを決めた場合、このエラーを回避する方法について[Lesson 6](https://www.kaggle.com/colinmorris/strings-and-dictionaries)で詳しく学びます。\n",
+    "\n",
+    "自由に複数のメッセージを試してみてください！\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "eca049cc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.043409Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.042956Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.054466Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.053245Z"
+    },
+    "papermill": {
+     "duration": 0.027177,
+     "end_time": "2024-04-23T19:52:00.057084",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.029907",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Your message here!\n"
+     ]
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.2, \"interactionType\": 1, \"questionType\": 2, \"questionId\": \"2_PrintAnotherMsg\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">Once you have printed your own message, you're ready to move on to the next question.</span>"
+      ],
+      "text/plain": [
+       "Once you have printed your own message, you're ready to move on to the next question."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# TODO: メッセージを変更する\n",
+    "print(\"Your message here!\")\n",
+    "\n",
+    "# 削除しないでください： この質問を完了としてマークしてください。\n",
+    "q2.check()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "74c4dae8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012206,
+     "end_time": "2024-04-23T19:52:00.081974",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.069768",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "あなたのメッセージをここに\n",
+    "自分のメッセージを印刷したら、次の質問に進みましょう。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3db849a2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012106,
+     "end_time": "2024-04-23T19:52:00.106455",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.094349",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Question 3\n",
+    "\n",
+    "As you learned in the tutorial, a comment in Python has a pound sign (`#`) in front of it, which tells Python to ignore the text after it.\n",
+    "\n",
+    "Putting a pound sign in front of a line of code will make Python ignore that code.  For instance, this line would be ignored by Python, and nothing would appear in the output:\n",
+    "```python\n",
+    "#print(1+2)\n",
+    "```\n",
+    "Removing the pound sign will make it so that you can run the code again. When we remove the pound sign in front of a line of code, we call this **uncommenting**.\n",
+    "\n",
+    "In this problem, you will uncomment two lines in the code cell below and view the output:\n",
+    "- Remove the `#` in front of `q3.hint()`.  To avoid errors, do NOT remove the `#` in front of `# Uncomment to view hint`.  \n",
+    "- Next, remove the `#` in front of `q3.solution()`.\n",
+    "\n",
+    "As in the previous questions, do not change the final line of code that marks your work as completed.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c486e4e2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012468,
+     "end_time": "2024-04-23T19:52:00.133092",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.120624",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "# 質問 3\n",
+    "\n",
+    "チュートリアルで学んだように、Pythonのコメントには、その前にポンド記号(`#`)があり、これはPythonにそれ以降のテキストを無視するように指示します。\n",
+    "\n",
+    "コード行の前にポンド記号を置くと、Pythonはそのコードを無視します。 例えば、次の行はPythonに無視され、出力には何も表示されません：\n",
+    "\n",
+    "```Python\n",
+    "#print(1+2)\n",
+    "```\n",
+    "ポンド記号を取り除くと、コードを再び実行できるようになります。コードの行の前にあるポンド記号を取り除くことを **コメント除去** と呼びます。\n",
+    "\n",
+    "この問題では、下のコード・セル内の2行のコメントを解除して、出力を見てみましょう：\n",
+    "- `q3.hint()` の前にある `#` を削除する。 エラーを避けるため、`# Uncomment to view hint`. の前の `#` は削除しないでください。 \n",
+    "- 次に、`q3.solution()`の前の `#` を削除する。\n",
+    "\n",
+    "前の問題と同様に、あなたの仕事が完了したことを示すコードの最後の行は変更しないでください。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "bfee26f8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.160067Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.159596Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.171094Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.169797Z"
+    },
+    "papermill": {
+     "duration": 0.02765,
+     "end_time": "2024-04-23T19:52:00.173508",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.145858",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.2, \"interactionType\": 1, \"questionType\": 2, \"questionId\": \"3_LearnCheckingCode\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">Once you have printed the hint and the solution, you're ready to move on to the next question.</span>"
+      ],
+      "text/plain": [
+       "Once you have printed the hint and the solution, you're ready to move on to the next question."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# ヒントを得るためにコメントを外す\n",
+    "#q3.hint()\n",
+    "\n",
+    "# 解答を表示するにはコメントを外す\n",
+    "#q3.solution()\n",
+    "\n",
+    "# 削除禁止：答えをチェックする\n",
+    "q3.check()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6f95467a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012692,
+     "end_time": "2024-04-23T19:52:00.198853",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.186161",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "ヒントと解答を印刷したら、次の問題に進む準備ができた。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3d9453ec",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012133,
+     "end_time": "2024-04-23T19:52:00.224020",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.211887",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "In the next question, and in most of the exercises in this course, you will have the option to uncomment to view hints and solutions.  Once you feel comfortable with uncommenting, continue to the next question.\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "997e0f0b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012035,
+     "end_time": "2024-04-23T19:52:00.249056",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.237021",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "次の問題、そしてこのコースのほとんどの練習問題では、ヒントや解答を見るためにコメントを解除するオプションがあります。 コメント解除に慣れたら、次の問題に進んでください。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "70b1912b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011973,
+     "end_time": "2024-04-23T19:52:00.273535",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.261562",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Question 4\n",
+    "\n",
+    "In the tutorial, you defined several variables to calculate the total number of seconds in a year.  Run the next code cell to do the calculation here.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d802f47c",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012121,
+     "end_time": "2024-04-23T19:52:00.298108",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.285987",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "# 第4問\n",
+    "\n",
+    "チュートリアルでは、1年間の合計秒数を計算するためにいくつかの変数を定義しました。 ここで計算を行うために、次のコードセルを実行してください。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "c21c96b9",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.324659Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.324256Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.330843Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.329765Z"
+    },
+    "papermill": {
+     "duration": 0.023289,
+     "end_time": "2024-04-23T19:52:00.333829",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.310540",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "126144000\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 変数の作成\n",
+    "num_years = 4\n",
+    "days_per_year = 365 \n",
+    "hours_per_day = 24\n",
+    "mins_per_hour = 60\n",
+    "secs_per_min = 60\n",
+    "\n",
+    "# 4年間の秒数を計算する\n",
+    "total_secs = secs_per_min * mins_per_hour * hours_per_day * days_per_year * num_years\n",
+    "print(total_secs)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d0abcfce",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012172,
+     "end_time": "2024-04-23T19:52:00.358538",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.346366",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Use the next code cell to:\n",
+    "- Define a variable `births_per_min` and set it to 250.  (There are on average 250 babies born each minute.)\n",
+    "- Define a variable `births_per_day` that contains the average number of babies born each day.  (To set the value of this variable, you should use `births_per_min` and some of the variables from the previous code cell.)\n",
+    "\n",
+    "Remember you can always get a hint if you need it!\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e358ba1a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012398,
+     "end_time": "2024-04-23T19:52:00.383975",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.371577",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "次のコードセルを使う：\n",
+    "- 変数 `births_per_min` を定義し、それを 250 に設定する。 (1分間に平均250人の赤ちゃんが生まれる)。\n",
+    "- 変数 `births_per_day` を定義し、毎日生まれる赤ちゃんの平均数を格納する。 (この変数の値を設定するために、`births_per_min`と前のコードのいくつかの変数を使う必要がある)。\n",
+    "\n",
+    "必要であればいつでもヒントを得られることを忘れないでください！"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "a4bc4c0e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.413547Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.413134Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.424544Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.423223Z"
+    },
+    "papermill": {
+     "duration": 0.028688,
+     "end_time": "2024-04-23T19:52:00.426962",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.398274",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.2, \"interactionType\": 1, \"questionType\": 1, \"questionId\": \"4_BirthsPerYear\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">Correct</span>"
+      ],
+      "text/plain": [
+       "Correct"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# TODO: births_per_min変数の値を設定する\n",
+    "births_per_min = 250\n",
+    "\n",
+    "# TODO: births_per_day変数の値を設定する\n",
+    "births_per_day = births_per_min * mins_per_hour * hours_per_day\n",
+    "\n",
+    "# 答えをチェックする\n",
+    "q4.check()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "4b3506ce",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.454917Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.454479Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.459974Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.458699Z"
+    },
+    "papermill": {
+     "duration": 0.02249,
+     "end_time": "2024-04-23T19:52:00.462498",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.440008",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# ヒントを得るためにコメントを外す\n",
+    "#q4.hint()\n",
+    "\n",
+    "# コメントを解除して解答を表示\n",
+    "#q4.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "edc4e651",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013868,
+     "end_time": "2024-04-23T19:52:00.490483",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.476615",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 🌶️ Question 5\n",
+    "\n",
+    "(Questions marked with a 🌶️ will be a little bit more challenging than the others!  Remember you can always get a hint or view the solution.)\n",
+    "\n",
+    "The [Titanic competition](https://www.kaggle.com/c/titanic) is Kaggle's most famous data science competition. In this competition, participants are challenged to build a machine learning model that can predict whether or not passengers survived the Titanic shipwreck, based on information like age, sex, family size, and ticket number.\n",
+    "\n",
+    "Run the next code cell without changes to load and preview the titanic data.\n",
+    "\n",
+    "Don't worry about the details of the code for now - the end result is just that the all of the titanic data has been loaded in a variable named `titanic_data`.  (In order to learn how to write this code yourself, you can take the [Python course](https://www.kaggle.com/learn/python) and then the [Pandas course](https://www.kaggle.com/learn/pandas).)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6db0ac8b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013028,
+     "end_time": "2024-04-23T19:52:00.517198",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.504170",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "# 🌶️ 第5問\n",
+    "\n",
+    "(🌶️、他の問題より少し難しくなっています！ いつでもヒントを得るか、解答を見ることができることを忘れないでください)。\n",
+    "\n",
+    "[タイタニックコンペティション](https://www.kaggle.com/c/titanic)はKaggleで最も有名なデータサイエンスコンペティションです。このコンペティションでは、参加者は、年齢、性別、家族の人数、チケット番号などの情報に基づいて、タイタニック号の難破船から乗客が生還したかどうかを予測できる機械学習モデルを構築することに挑戦します。\n",
+    "\n",
+    "次のコード・セルを変更せずに実行し、タイタニックのデータをロードしてプレビューしてください。\n",
+    "\n",
+    "最終的な結果は、タイタニック号の全データが`titanic_data`という変数にロードされたということだけです。 (このコードの書き方を自分で学ぶには、[Pythonコース](https://www.kaggle.com/learn/python)を受講し、次に[Pandasコース](https://www.kaggle.com/learn/pandas)を受講すればよい)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "95884e94",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.545528Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.545106Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.592176Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.590980Z"
+    },
+    "papermill": {
+     "duration": 0.064699,
+     "end_time": "2024-04-23T19:52:00.594970",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.530271",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>PassengerId</th>\n",
+       "      <th>Survived</th>\n",
+       "      <th>Pclass</th>\n",
+       "      <th>Name</th>\n",
+       "      <th>Sex</th>\n",
+       "      <th>Age</th>\n",
+       "      <th>SibSp</th>\n",
+       "      <th>Parch</th>\n",
+       "      <th>Ticket</th>\n",
+       "      <th>Fare</th>\n",
+       "      <th>Cabin</th>\n",
+       "      <th>Embarked</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>Braund, Mr. Owen Harris</td>\n",
+       "      <td>male</td>\n",
+       "      <td>22.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>A/5 21171</td>\n",
+       "      <td>7.2500</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>\n",
+       "      <td>female</td>\n",
+       "      <td>38.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>PC 17599</td>\n",
+       "      <td>71.2833</td>\n",
+       "      <td>C85</td>\n",
+       "      <td>C</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>3</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "      <td>Heikkinen, Miss. Laina</td>\n",
+       "      <td>female</td>\n",
+       "      <td>26.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>STON/O2. 3101282</td>\n",
+       "      <td>7.9250</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>4</td>\n",
+       "      <td>1</td>\n",
+       "      <td>1</td>\n",
+       "      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>\n",
+       "      <td>female</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>1</td>\n",
+       "      <td>0</td>\n",
+       "      <td>113803</td>\n",
+       "      <td>53.1000</td>\n",
+       "      <td>C123</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>5</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "      <td>Allen, Mr. William Henry</td>\n",
+       "      <td>male</td>\n",
+       "      <td>35.0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>0</td>\n",
+       "      <td>373450</td>\n",
+       "      <td>8.0500</td>\n",
+       "      <td>NaN</td>\n",
+       "      <td>S</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   PassengerId  Survived  Pclass  \\\n",
+       "0            1         0       3   \n",
+       "1            2         1       1   \n",
+       "2            3         1       3   \n",
+       "3            4         1       1   \n",
+       "4            5         0       3   \n",
+       "\n",
+       "                                                Name     Sex   Age  SibSp  \\\n",
+       "0                            Braund, Mr. Owen Harris    male  22.0      1   \n",
+       "1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1   \n",
+       "2                             Heikkinen, Miss. Laina  female  26.0      0   \n",
+       "3       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1   \n",
+       "4                           Allen, Mr. William Henry    male  35.0      0   \n",
+       "\n",
+       "   Parch            Ticket     Fare Cabin Embarked  \n",
+       "0      0         A/5 21171   7.2500   NaN        S  \n",
+       "1      0          PC 17599  71.2833   C85        C  \n",
+       "2      0  STON/O2. 3101282   7.9250   NaN        S  \n",
+       "3      0            113803  53.1000  C123        S  \n",
+       "4      0            373450   8.0500   NaN        S  "
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# タイタニック大会からデータをロードする\n",
+    "import pandas as pd\n",
+    "titanic_data = pd.read_csv(\"../input/titanic/train.csv\")\n",
+    "\n",
+    "# データの最初の5行を表示する\n",
+    "titanic_data.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "276b3bbb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013283,
+     "end_time": "2024-04-23T19:52:00.621877",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.608594",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "The data has a different row for each passenger.  \n",
+    "\n",
+    "The next code cell defines and prints the values of three variables:  \n",
+    "- `total` = total number of passengers who boarded the ship\n",
+    "- `survived` = number of passengers who survived the shipwreck\n",
+    "- `minors` = number of passengers under 18 years of age\n",
+    "\n",
+    "Run the code cell without changes.  (Don't worry about the details of how these variables are calculated for now.  You can learn more about how to calculate these values in the [Pandas course](https://www.kaggle.com/learn/pandas).)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ed400618",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012964,
+     "end_time": "2024-04-23T19:52:00.648713",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.635749",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "このデータには、乗客ごとに異なる行があります。 \n",
+    "\n",
+    "次のコード・セルでは、3つの変数の値を定義して表示している：  \n",
+    "- `total` = 乗船した乗客の総数\n",
+    "- `survived` = 難破船から生還した乗客数\n",
+    "- `minors` = 18歳未満の乗客の数\n",
+    "\n",
+    "コード・セルを変更せずに実行する。 (これらの変数がどのように計算されるかについては、今は気にしないでください。 これらの値の計算方法については[Pandasコース](https://www.kaggle.com/learn/pandas)で詳しく学ぶことができます)。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "2dc834d3",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.677829Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.677395Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.688754Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.687752Z"
+    },
+    "papermill": {
+     "duration": 0.029407,
+     "end_time": "2024-04-23T19:52:00.691489",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.662082",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "891\n",
+      "342\n",
+      "113\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 乗客総数\n",
+    "total = len(titanic_data)\n",
+    "print(total)\n",
+    "\n",
+    "# 生存した乗客の数\n",
+    "survived = (titanic_data.Survived == 1).sum()\n",
+    "print(survived)\n",
+    "\n",
+    "# 18歳未満の乗客数\n",
+    "minors = (titanic_data.Age < 18).sum()\n",
+    "print(minors)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e56a67e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013075,
+     "end_time": "2024-04-23T19:52:00.718827",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.705752",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "So, \n",
+    "- `total = 891` (there were 891 passengers on board the Titanic),\n",
+    "- `survived = 342` (342 passengers survived), and \n",
+    "- `minors = 113` (113 passengers were under the age of 18).\n",
+    "\n",
+    "In the code cell below, replace the underlines (`____`) with code to calculate the values for two more variables:\n",
+    "- `survived_fraction` should be set to the fraction of passengers who survived the Titanic disaster.\n",
+    "- `minors_fraction` should be the fraction of passengers who were minors (under the age of 18).\n",
+    "\n",
+    "For each variable, your answer should be a number between 0 and 1.  \n",
+    "\n",
+    "If you need a hint or want to view the solution, you can skip to the next code cell and uncomment the appropriate lines of code (`q5.hint()` and `q5.solution()`).\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "00620b0b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.012946,
+     "end_time": "2024-04-23T19:52:00.745203",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.732257",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "つまり \n",
+    "- `total ＝ 891`（タイタニック号には891人の乗客が乗っていた）、\n",
+    "- `survived ＝ 342人`（342人の乗客が生き残った）、そして \n",
+    "- `minors= 113`（113人の乗客が18歳未満であった）。\n",
+    "\n",
+    "下のコードセルで、下線(`____`)を、さらに2つの変数の値を計算するコードに置き換える：\n",
+    "- `survived_fraction`には、タイタニック号の事故で生き残った乗客の割合を設定する。\n",
+    "- `minors_fraction`は、未成年（18歳未満）の乗客の割合とする。\n",
+    "\n",
+    "各変数について、答えは0から1の間の数字でなければなりません。 \n",
+    "\n",
+    "ヒントが必要な場合や解答を見たい場合は、次のコードセルに飛んで、適切なコード行（`q5.hint()`と `q5.solution()`）のコメントを解除してください。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "300e7aeb",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.775604Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.775150Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.787816Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.786435Z"
+    },
+    "papermill": {
+     "duration": 0.031316,
+     "end_time": "2024-04-23T19:52:00.790529",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.759213",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.3838383838383838\n",
+      "0.12682379349046016\n"
+     ]
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.2, \"interactionType\": 1, \"questionType\": 1, \"questionId\": \"5_BonusTitanic\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">Correct</span>"
+      ],
+      "text/plain": [
+       "Correct"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# TODO：変数survived_fractionの値を埋める\n",
+    "survived_fraction = survived / total\n",
+    "\n",
+    "# 変数の値を表示する\n",
+    "print(survived_fraction)\n",
+    "\n",
+    "# TODO: minors_fraction変数の値を埋める\n",
+    "minors_fraction = minors / total\n",
+    "\n",
+    "# 変数の値を表示する\n",
+    "print(minors_fraction)\n",
+    "\n",
+    "# 答えをチェックする\n",
+    "q5.check()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "675eaa09",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T19:52:00.821625Z",
+     "iopub.status.busy": "2024-04-23T19:52:00.821183Z",
+     "iopub.status.idle": "2024-04-23T19:52:00.834717Z",
+     "shell.execute_reply": "2024-04-23T19:52:00.833400Z"
+    },
+    "papermill": {
+     "duration": 0.032442,
+     "end_time": "2024-04-23T19:52:00.837410",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.804968",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 1, \"questionId\": \"5_BonusTitanic\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> To get the fraction of people who survived the titanic, you need to divide the number of survivors by the total number of people.  Remember the variables that you can use to answer this question: `survived`, `total`, and `minors`."
+      ],
+      "text/plain": [
+       "Hint: To get the fraction of people who survived the titanic, you need to divide the number of survivors by the total number of people.  Remember the variables that you can use to answer this question: `survived`, `total`, and `minors`."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 1, \"questionId\": \"5_BonusTitanic\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "# Fill in the value of the survived_fraction variable \n",
+       "survived_fraction = survived/total\n",
+       "\n",
+       "# Print the value of the survived_fraction variable\n",
+       "print(survived_fraction)\n",
+       "\n",
+       "# Fill in the value of the minors_fraction variable\n",
+       "minors_fraction = minors/total \n",
+       "\n",
+       "# Print the value of the minors_fraction variable\n",
+       "print(minors_fraction)\n",
+       "\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "# Fill in the value of the survived_fraction variable \n",
+       "survived_fraction = survived/total\n",
+       "\n",
+       "# Print the value of the survived_fraction variable\n",
+       "print(survived_fraction)\n",
+       "\n",
+       "# Fill in the value of the minors_fraction variable\n",
+       "minors_fraction = minors/total \n",
+       "\n",
+       "# Print the value of the minors_fraction variable\n",
+       "print(minors_fraction)\n",
+       "\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# ヒントを受け取るためにコメントを外す\n",
+    "q5.hint()\n",
+    "\n",
+    "# コメントを解除して解答を見る\n",
+    "q5.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cd43767b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-04-23T14:34:16.805331Z",
+     "iopub.status.busy": "2024-04-23T14:34:16.804898Z",
+     "iopub.status.idle": "2024-04-23T14:34:16.831537Z",
+     "shell.execute_reply": "2024-04-23T14:34:16.829969Z",
+     "shell.execute_reply.started": "2024-04-23T14:34:16.805296Z"
+    },
+    "papermill": {
+     "duration": 0.01567,
+     "end_time": "2024-04-23T19:52:00.868208",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.852538",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "ヒント：タイタニック号から生還した人の割合を求めるには、生還者数を総人数で割る必要がある。この問題に答えるために使える変数：生存者，合計，未成年者を覚えておこう．\n",
+    "\n",
+    "解答\n",
+    "\n",
+    "\\#変数survived_fractionの値を記入する。  \n",
+    "survived_fraction = survived/total\n",
+    "\n",
+    "\\#変数survived_fractionの値を表示する  \n",
+    "print(survived_fraction)\n",
+    "\n",
+    "\\#変数minors_fractionの値を記入する  \n",
+    "minors_fraction = minors/total \n",
+    "\n",
+    "\\#minors_fraction 変数の値を表示する  \n",
+    "print(minors_fraction)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d564a53",
+   "metadata": {
+    "papermill": {
+     "duration": 0.014838,
+     "end_time": "2024-04-23T19:52:00.897796",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.882958",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Bonus Exercise\n",
+    "\n",
+    "As an **optional** next step, you're encouraged to make a submission to the Titanic competition.  \n",
+    "> To do this, follow the instructions in the **[notebook here](https://www.kaggle.com/alexisbcook/titanic-tutorial)**.  \n",
+    "\n",
+    "The notebook is beginner-friendly and does not assume you have any experience with coding.  At the same time, you'll learn how to author your own notebooks on Kaggle, and it gives you a great idea of what you'll be able to do if you continue to learn data science!\n",
+    "\n",
+    "# Keep going\n",
+    "\n",
+    "Congratulations!  You have just finished the first exercise in the Intro to Programming course!  \n",
+    "\n",
+    "You are now ready to learn how to **[organize your code with functions](https://www.kaggle.com/alexisbcook/functions)**.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25a8c9d8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.014728,
+     "end_time": "2024-04-23T19:52:00.927173",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.912445",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "# ボーナスエクササイズ\n",
+    "\n",
+    "次のステップとして、タイタニックのコンペティションに応募してください。 \n",
+    "> そのためには、**[ノートブックはこちら](https://www.kaggle.com/alexisbcook/titanic-tutorial)**の指示に従ってください。 \n",
+    "\n",
+    "このノートブックは初心者に優しく、コーディングの経験があることを前提としていません。 同時に、Kaggleで自分のノートブックを作成する方法を学ぶことができ、データサイエンスを学び続ければ何ができるようになるかを知ることができます！\n",
+    "\n",
+    "# 続ける\n",
+    "\n",
+    "おめでとうございます！ プログラミング入門コースの最初の演習が終わりました！ \n",
+    "\n",
+    "これで、**[関数を使ってコードを整理する](https://www.kaggle.com/alexisbcook/functions)**方法を学ぶ準備ができました。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2a4b0f4f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.015028,
+     "end_time": "2024-04-23T19:52:00.956748",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.941720",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "*Have questions or comments? Visit the [course discussion forum](https://www.kaggle.com/learn/intro-to-programming/discussion) to chat with other learners.*\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5adc9133",
+   "metadata": {
+    "papermill": {
+     "duration": 0.014109,
+     "end_time": "2024-04-23T19:52:00.985503",
+     "exception": false,
+     "start_time": "2024-04-23T19:52:00.971394",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "*質問やコメントがありますか？[コースディスカッションフォーラム](https://www.kaggle.com/learn/intro-to-programming/discussion)で他の学習者とチャットしてください。"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [
+    {
+     "databundleVersionId": 26502,
+     "sourceId": 3136,
+     "sourceType": "competition"
+    }
+   ],
+   "isGpuEnabled": false,
+   "isInternetEnabled": false,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.13"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 6.453132,
+   "end_time": "2024-04-23T19:52:01.521426",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-04-23T19:51:55.068294",
+   "version": "2.5.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
